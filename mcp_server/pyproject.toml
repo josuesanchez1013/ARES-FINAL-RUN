@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ares-mcp-server"
+version = "2.0.0"
+description = "MCP server for parsing STIG scan outputs (CKL, CSV) and executing validation commands"
+authors = [
+    {name = "ARES maintainers"},
+]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "fastmcp>=0.2.0",
+    "fastapi>=0.104.0",
+    "pydantic>=2.0.0",
+    "lxml>=4.9.0",
+    "uvicorn>=0.23.0",
+    "fabric>=3.0.0",
+    "paramiko>=3.0.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.21.0",
+]
+
+[project.scripts]
+ares-mcp-server = "mcp_server.server:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["mcp_server*"]

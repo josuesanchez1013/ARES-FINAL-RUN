@@ -1,0 +1,58 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: ares-stig-parser
+  namespace: ares-mcp
+  labels:
+    app: ares-stig-parser
+    factory.ai/resource-type: mcp
+    factory.ai/api-env: prod
+  annotations:
+    factory.ai/mcp-path: /mcp
+    factory.ai/organization: "ARES"
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/min-scale: "1"
+        deployment-timestamp: "2026-07-16T09:42:00Z"
+    spec:
+      imagePullSecrets:
+        - name: abundant-moth
+      containers:
+        - name: ares-stig-parser
+          image: registry.example.internal:443/your-group/ares/ares-mcp-server:2.0.0
+          imagePullPolicy: Always
+          ports:
+            - name: http1
+              containerPort: 8000
+              protocol: TCP
+          env:
+            - name: HOME
+              value: /tmp
+            - name: MCP_HOST
+              value: "0.0.0.0"
+            - name: MCP_PORT
+              value: "8000"
+            - name: ARES_SSH_HOST
+              value: "192.168.56.102"
+            - name: ARES_SSH_USER
+              value: "ares-validator"
+            - name: ARES_SSH_PASSWORD
+              value: "aresaic2026"
+            - name: ARES_SSH_PORT
+              value: "22"
+            - name: ARES_SSH_TIMEOUT
+              value: "30"
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+          resources:
+            requests:
+              cpu: 100m
+              memory: 256Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi

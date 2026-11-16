@@ -1,0 +1,9 @@
+Vuln_ID,Rule_ID,Severity,Status,Finding_Details,Comments,STIG_Title
+V-230221,SV-230221r627750_rule,high,Open,"RHEL 8 operating system security patches and updates are not installed and up to date. Last update: 45 days ago.","yum check-update shows 3 pending security patches","RHEL 8 must install security-relevant software updates within the time period directed by an authoritative source."
+V-230222,SV-230222r627750_rule,medium,NotAFinding,"SSH idle timeout is configured. ClientAliveInterval = 600, ClientAliveCountMax = 0","Verified in /etc/ssh/sshd_config","RHEL 8 must be configured so that all network connections associated with SSH traffic are terminated at the end of the session or after 10 minutes of inactivity."
+V-230223,SV-230223r627750_rule,medium,Open,"Password minimum length is set to 8 characters. STIG requires 15.","minlen=8 in /etc/security/pwquality.conf","RHEL 8 must enforce a minimum 15-character password length."
+V-230224,SV-230224r627750_rule,low,NotAFinding,"System audit logs are being collected and rotated correctly.","auditd service active, rotate set to 5","RHEL 8 audit system must take appropriate action when the audit storage volume is full."
+V-230225,SV-230225r627750_rule,high,Not_Reviewed,"","Unable to verify symlink protection setting","RHEL 8 must enable kernel parameters to enforce discretionary access control on symlinks."
+V-230227,SV-230227r627750_rule,medium,Open,"Firewalld default zone is not set to drop. Currently: public","firewall-cmd --get-default-zone returns public","RHEL 8 must configure the firewall to restrict access."
+V-230228,SV-230228r627750_rule,high,NotAFinding,"FIPS mode is enabled on this system.","fips-mode-setup --check returns enabled","RHEL 8 must implement NIST FIPS-validated cryptography."
+V-230229,SV-230229r627750_rule,low,Not_Reviewed,"","Scanner could not determine USB storage status","RHEL 8 must disable the ability to use USB mass storage devices."

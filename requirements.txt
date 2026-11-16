@@ -1,0 +1,30 @@
+# MCP Server (Priority 1)
+mcp>=1.0.0
+pydantic>=2.0.0
+lxml>=4.9.0
+
+# CLI Executor (Priority 2A)
+fabric>=3.0.0
+paramiko>=3.0.0
+
+# Streamlit UI (Priority 9)
+streamlit>=1.28.0
+plotly>=5.17.0
+pandas>=2.0.0
+
+# Testing
+pytest>=7.4.0
+pytest-cov>=4.1.0
+pytest-asyncio>=0.21.0
+pytest-mock>=3.11.0
+pytest-timeout>=2.1.0
+
+# Utilities
+python-dotenv>=1.0.0
+pyyaml>=6.0
+requests>=2.31.0
+
+# Development
+black>=23.0.0
+flake8>=6.0.0
+mypy>=1.5.0

@@ -1,0 +1,101 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+.windsurf/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+*.cover
+.hypothesis/
+
+# Data (don't commit scan files or logs)
+# data/input/*  # Commented out - team needs to see test files
+# !data/input/.gitkeep
+data/output/*
+!data/output/.gitkeep
+data/logs/*
+!data/logs/.gitkeep
+
+# Secrets (never commit credentials)
+*.env
+.env.local
+.env.*.local
+config/secrets.yaml
+ssh_keys/
+*.pem
+*.key
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# Local analysis docs (keep local, don't commit)
+STREAMLIT_INTEGRATION_ANALYSIS.md
+
+# Archived/historical docs (kept locally for reference, not committed)
+docs/history/
+
+# Per-run observability artifacts (added in Phase 3; local only)
+data/runs/
+data/stig_library/
+data/targets/
+data/scap_scans/
+
+# AI operating rules — local only, not public/tracked (Cline reads these)
+.clinerules/
+
+# Streamlit local config — local only
+.streamlit/
+
+# UI v2: the built frontend is committed so the server host needs no Node.js
+!frontend/dist/
+frontend/node_modules/
+.venv-verify-*/

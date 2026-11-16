@@ -1,0 +1,9 @@
+Vuln_ID,Rule_ID,Severity,Status,Finding_Details,Comments,STIG_Title
+V-230221,SV-230221r627750_rule,high,NotAFinding,"System is up to date. Verified with 'yum check-update' - no packages require updates.","Scan ran on 2026-06-15","RHEL 8 must install security-relevant software updates within the time period directed by an authoritative source."
+V-230222,SV-230222r627750_rule,medium,NotAFinding,"SSH idle timeout configured correctly. ClientAliveInterval=600.","","RHEL 8 must be configured so that all network connections associated with SSH traffic are terminated at the end of the session or after 10 minutes of inactivity."
+V-230223,SV-230223r627750_rule,medium,Open,"Password minimum length set to 8. Does not meet 15-character requirement.","pwquality.conf minlen=8","RHEL 8 must enforce a minimum 15-character password length."
+V-230224,SV-230224r627750_rule,low,NotAFinding,"Audit logs configured and rotating properly.","","RHEL 8 audit system must take appropriate action when the audit storage volume is full."
+V-230226,SV-230226r627750_rule,medium,Open,"SELinux is in permissive mode. STIG requires enforcing.","getenforce returns Permissive","RHEL 8 must have SELinux configured in enforcing mode."
+V-230227,SV-230227r627750_rule,medium,NotAFinding,"Firewalld default zone is set to drop.","firewall-cmd --get-default-zone returns drop","RHEL 8 must configure the firewall to restrict access."
+V-230228,SV-230228r627750_rule,high,NotAFinding,"FIPS mode enabled.","fips-mode-setup --check","RHEL 8 must implement NIST FIPS-validated cryptography."
+V-230229,SV-230229r627750_rule,low,NotAFinding,"USB storage is disabled via modprobe blacklist.","usb-storage in /etc/modprobe.d/blacklist.conf","RHEL 8 must disable the ability to use USB mass storage devices."

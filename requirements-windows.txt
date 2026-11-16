@@ -1,0 +1,3 @@
+# Only needed for Windows targets (WinRM). Install on the ARES host:
+#   pip install -r requirements-windows.txt
+pywinrm>=0.4.3
